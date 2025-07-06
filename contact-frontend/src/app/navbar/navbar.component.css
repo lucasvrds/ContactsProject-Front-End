@@ -1,0 +1,31 @@
+.Titulo {
+    font-size: 42px;
+    background-color: #210613;
+    color: #fffff5 ;
+    padding-top: 10px;
+}
+
+li {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+:host {
+  background-color: #210613;
+  color: #fffff5;
+  display: block;
+}
+
+.navbar {
+  background-color: #210613;
+}
+
+.nav-link {
+  color: #fffff5 !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffd700 !important;
+}
