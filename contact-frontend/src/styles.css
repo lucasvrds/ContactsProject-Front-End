@@ -1,5 +1,11 @@
+/*Anotações da paleta de cor: 
+  Background: cinza escuro #121212 
+  Forms: cinza mais claro #1e1e1e 
+  Detalhes: amarelo #ffd700
+*/
+
 html, body {
-  background-color: #210613;
+  background-color: #121212;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -9,4 +15,8 @@ html, body {
 h1, h2, h3, h4, h5, h6,
 label, p, strong, span {
   color: #fffff5;
+}
+
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

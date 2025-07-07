@@ -1,5 +1,5 @@
 :host {
-  background-color: #210613;
+  background-color: #121212;
   color: #fffff5;
   display: block;
 }
@@ -9,12 +9,7 @@ h2 {
 }
 
 .list-group-item {
-  background-color: #2d0b1a;
+  background-color: #1e1e1e;
   color: #fffff5;
-  border-color: #3e0f21;
-}
-
-.badge.bg-warning {
-  background-color: #ffd700;
-  color: #210613;
+  border-color: #ffd700;
 }

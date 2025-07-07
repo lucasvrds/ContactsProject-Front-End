@@ -10,5 +10,6 @@ export interface Contact {
   cargo: string;
   observacao: string;
   categoria: string;
+  telefoneFixo: string;
   favorito: boolean;
 }

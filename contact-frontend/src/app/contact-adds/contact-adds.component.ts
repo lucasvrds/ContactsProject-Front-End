@@ -26,6 +26,7 @@ export class ContactAddsComponent implements OnInit {
       empresa: [''],
       cargo: [''],
       observacao: [''],
+      telefoneFixo: [''],
       categoria: ['', Validators.required],
       favorito: [false]
     });

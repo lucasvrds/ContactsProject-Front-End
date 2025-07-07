@@ -7,18 +7,28 @@
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="row g-3">
             <div class="col-md-6">
-              <label>Nome</label>
+              <label><strong>Nome *</strong></label>
               <input type="text" class="form-control" formControlName="nome" required />
+            </div>
+
+            <div class="col-md-6">
+              <label><strong>Categoria *</strong></label>
+              <input type="text" class="form-control" formControlName="categoria" required />
+            </div>
+
+            <div class="col-md-6">
+              <label><strong>Telefone *</strong></label>
+              <input type="text" class="form-control" formControlName="telefone" required />
+            </div>
+
+            <div class="col-md-6">
+              <label><strong>Telefone Fixo</strong></label>
+              <input type="text" class="form-control" formControlName="telefoneFixo" />
             </div>
 
             <div class="col-md-6">
               <label>Email</label>
               <input type="email" class="form-control" formControlName="email" />
-            </div>
-
-            <div class="col-md-6">
-              <label>Telefone</label>
-              <input type="text" class="form-control" formControlName="telefone" />
             </div>
 
             <div class="col-md-6">
@@ -44,11 +54,6 @@
             <div class="col-md-6">
               <label>Cargo</label>
               <input type="text" class="form-control" formControlName="cargo" />
-            </div>
-
-            <div class="col-md-6">
-              <label>Categoria</label>
-              <input type="text" class="form-control" formControlName="categoria" />
             </div>
 
             <div class="col-12">

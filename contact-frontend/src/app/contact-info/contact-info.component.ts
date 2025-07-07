@@ -32,6 +32,7 @@ export class ContactInfoComponent implements OnInit {
       empresa: [''],
       cargo: [''],
       observacao: [''],
+      telefoneFixo: [''],
       categoria: [''],
       favorito: [false],
     });
