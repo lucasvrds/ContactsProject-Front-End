@@ -1,0 +1,24 @@
+.card {
+  background-color: #1e1e1e;
+  color: #fffff5;
+  border: none;
+}
+
+label {
+  color: #fffff5;
+}
+
+input.form-control,
+textarea.form-control,
+select.form-select {
+  background-color: #1e1e1e;
+  color: #fffff5;
+  border: 1px solid #fffff5;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #ffd700;
+  box-shadow: none;
+}

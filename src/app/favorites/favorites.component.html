@@ -1,0 +1,10 @@
+<div class="container">
+<h2>Contatos favoritados</h2>
+<ul class="list-group">
+  <li *ngFor="let contact of favorites" class="list-group-item d-flex justify-content-between align-items-center">
+    <div>
+      <strong>{{ contact.nome }}</strong> — {{ contact.telefone }}
+    </div>
+  </li>
+</ul>
+</div>
