@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactService, Contact } from 'src/app/services/contact.service';
+import { CategoryService, Category } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-contact-info',
@@ -12,16 +13,19 @@ export class ContactInfoComponent implements OnInit {
   contactForm!: FormGroup;
   contactId!: number;
   isLoading = false;
+  categories: Category[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder,
-    private contactService: ContactService
+    private contactService: ContactService,
+    private categoryService: CategoryService
   ) {}
 
   ngOnInit(): void {
     this.contactId = Number(this.route.snapshot.paramMap.get('id'));
+
     this.contactForm = this.fb.group({
       nome: ['', Validators.required],
       telefone: [''],
@@ -33,11 +37,16 @@ export class ContactInfoComponent implements OnInit {
       cargo: [''],
       observacao: [''],
       telefoneFixo: [''],
-      categoria: [''],
+      categoria: ['', Validators.required],
       favorito: [false],
     });
 
     this.loadContact();
+
+    this.categoryService.getCategories().subscribe({
+      next: (data) => this.categories = data,
+      error: (err) => console.error('Erro ao carregar categorias', err)
+    });
   }
 
   loadContact(): void {

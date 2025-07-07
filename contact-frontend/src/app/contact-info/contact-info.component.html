@@ -13,8 +13,12 @@
 
             <div class="col-md-6">
               <label><strong>Categoria *</strong></label>
-              <input type="text" class="form-control" formControlName="categoria" required />
+                 <select class="form-select" formControlName="categoria" required>
+                  <option value="">Selecione uma categoria</option>
+                 <option *ngFor="let c of categories" [value]="c.nome">{{ c.nome }}</option>
+               </select>
             </div>
+
 
             <div class="col-md-6">
               <label><strong>Telefone *</strong></label>
@@ -22,7 +26,7 @@
             </div>
 
             <div class="col-md-6">
-              <label><strong>Telefone Fixo</strong></label>
+              <label>Telefone Fixo</label>
               <input type="text" class="form-control" formControlName="telefoneFixo" />
             </div>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from 'src/app/services/contact.service';
+import { CategoryService, Category } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-contact-adds',
@@ -9,16 +10,19 @@ import { ContactService } from 'src/app/services/contact.service';
 })
 export class ContactAddsComponent implements OnInit {
   contactForm!: FormGroup;
+  categories: Category[] = [];
 
   constructor(
     private fb: FormBuilder,
-    private contactService: ContactService
+    private contactService: ContactService,
+    private categoryService: CategoryService
   ) {}
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
       nome: ['', Validators.required],
       telefone: ['', Validators.required],
+      telefoneFixo: [''],
       email: [''],
       endereco: [''],
       aniversario: [''],
@@ -26,9 +30,21 @@ export class ContactAddsComponent implements OnInit {
       empresa: [''],
       cargo: [''],
       observacao: [''],
-      telefoneFixo: [''],
       categoria: ['', Validators.required],
       favorito: [false]
+    });
+
+    this.loadCategories();
+  }
+
+  loadCategories(): void {
+    this.categoryService.getCategories().subscribe({
+      next: (data) => {
+        this.categories = data;
+      },
+      error: () => {
+        console.error('Erro ao carregar categorias');
+      }
     });
   }
 
@@ -38,9 +54,7 @@ export class ContactAddsComponent implements OnInit {
       this.contactService.addContact(contact).subscribe({
         next: () => {
           alert('Contato adicionado com sucesso!');
-          this.contactForm.reset({
-            favorito: false
-          });
+          this.contactForm.reset({ favorito: false });
         },
         error: () => {
           alert('Erro ao adicionar contato');
@@ -55,8 +69,6 @@ export class ContactAddsComponent implements OnInit {
   }
 
   clearForm(): void {
-    this.contactForm.reset({
-      favorito: false
-    });
+    this.contactForm.reset({ favorito: false });
   }
 }

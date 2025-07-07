@@ -13,7 +13,12 @@
 
             <div class="col-md-6">
               <label><strong>Categoria *</strong></label>
-              <input type="text" class="form-control" formControlName="categoria" required />
+              <select class="form-select" formControlName="categoria" required>
+                <option value="">Selecione uma categoria</option>
+                <option *ngFor="let cat of categories" [value]="cat.nome">
+                  {{ cat.nome }}
+                </option>
+              </select>
             </div>
 
             <div class="col-md-6">
@@ -22,8 +27,8 @@
             </div>
 
             <div class="col-md-6">
-              <label><strong>Telefone-Fixo</strong></label>
-              <input type="text" class="form-control" formControlName="telefone" required />
+              <label>Telefone Fixo</label>
+              <input type="text" class="form-control" formControlName="telefoneFixo" />
             </div>
 
             <div class="col-md-6">
@@ -55,8 +60,6 @@
               <label>Cargo</label>
               <input type="text" class="form-control" formControlName="cargo" />
             </div>
-
-            
 
             <div class="col-12">
               <label>Observação</label>
