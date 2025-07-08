@@ -11,7 +11,7 @@ export interface Category {
   providedIn: 'root'
 })
 export class CategoryService {
-  private apiUrl = 'http://localhost:8080/categories';
+  private apiUrl = 'http://lucasvieiracontacts.duckdns.org/categories';
 
   constructor(private http: HttpClient) {}
 

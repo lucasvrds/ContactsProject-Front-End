@@ -21,7 +21,7 @@ export interface Contact {
   providedIn: 'root'
 })
 export class ContactService {
-  private apiUrl = 'http://localhost:8080/contacts'; 
+  private apiUrl = 'http://lucasvieiracontacts.duckdns.org/contacts'; 
 
   constructor(private http: HttpClient) {}
 
