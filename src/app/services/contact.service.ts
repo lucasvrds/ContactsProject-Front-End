@@ -6,6 +6,7 @@ export interface Contact {
   id?: number;
   nome: string;
   telefone: string;
+  telefoneFixo: string;
   email: string;
   endereco: string;
   aniversario: string;
@@ -21,7 +22,7 @@ export interface Contact {
   providedIn: 'root'
 })
 export class ContactService {
-  private apiUrl = 'http://lucasvieiracontacts.duckdns.org/contacts'; 
+  private apiUrl = 'https://lucasvieiracontacts.duckdns.org/contacts'; 
 
   constructor(private http: HttpClient) {}
 
